@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Авторские вязаные изделия и мастер-классы по вязанию кукол. Познакомьтесь с мастером, выберите изделие или начните свой первый проект.">
+  <title>Тёплые петли — вязание с душой</title>
+  <style>
+    :root{--cream:#fbf7f0;--paper:#fffdf9;--ink:#3f3935;--muted:#776d65;--rose:#c97869;--rose-dark:#a95e52;--sage:#75836d;--sage-light:#e8ede3;--pink:#f2ddd5;--line:#eadfd4;--shadow:0 14px 40px #59412d12;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 var(--sans)}a{color:inherit}button,input{font:inherit}button,a{touch-action:manipulation}img{display:block;max-width:100%}.wrap{width:min(1120px,calc(100% - 40px));margin-inline:auto}.eyebrow{font-size:.77rem;text-transform:uppercase;letter-spacing:.16em;color:var(--rose-dark);font-weight:700}.section{padding:88px 0}.section-head{max-width:660px;margin:0 auto 38px;text-align:center}.section-head h2{font:clamp(2rem,4vw,3.1rem)/1.1 var(--serif);margin:10px 0 14px}.section-head p{color:var(--muted);margin:0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:999px;padding:13px 22px;background:var(--rose);color:white;text-decoration:none;font-weight:700;cursor:pointer;transition:transform .2s,background .2s}.btn:hover{background:var(--rose-dark);transform:translateY(-2px)}.btn:focus-visible,a:focus-visible,input:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #829277;outline-offset:3px}.btn.outline{background:transparent;border:1px solid var(--rose);color:var(--rose-dark)}.btn.outline:hover{background:var(--pink)}
+    .topbar{position:sticky;top:0;z-index:10;background:#fbf7f0ed;backdrop-filter:blur(12px);border-bottom:1px solid #eadfd499}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;font:700 1.5rem var(--serif);white-space:nowrap}.brand span{color:var(--rose)}.navlinks{display:flex;align-items:center;gap:22px}.navlinks a{text-decoration:none;font-size:.9rem;color:#5d544e}.navlinks a:hover{color:var(--rose-dark)}.nav .btn{padding:10px 17px;font-size:.88rem}.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:12px;padding:8px 12px;color:var(--ink)}
+    .hero{padding:58px 0 80px;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,#eedbd0 0,transparent 35%),linear-gradient(180deg,#fbf7f0,#f7efe7)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}.hero-copy h1{font:clamp(2.7rem,6vw,5rem)/1.02 var(--serif);letter-spacing:-.035em;margin:15px 0 20px;max-width:650px}.hero-copy h1 em{font-weight:400;color:var(--rose-dark)}.hero-copy>p{max-width:520px;color:var(--muted);font-size:1.08rem;margin:0 0 26px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-note{display:flex;align-items:center;gap:10px;margin-top:24px;color:var(--muted);font-size:.9rem}.hero-note span{color:var(--sage);font-size:1.3rem}.photo-slot{position:relative;min-height:440px;border:1px dashed #cbb9a9;border-radius:42% 42% 24px 24px;background:linear-gradient(150deg,#f2ddd5,#eee6d8 54%,#dfe5d9);display:grid;place-items:center;overflow:hidden;box-shadow:var(--shadow)}.photo-slot:before,.photo-slot:after{content:'';position:absolute;border:1px solid #ffffff90;border-radius:50%;width:290px;height:290px}.photo-slot:after{width:390px;height:390px}.slot-inner{position:relative;z-index:1;text-align:center;padding:28px;color:#675a50}.slot-icon{width:74px;height:74px;margin:0 auto 14px;display:grid;place-items:center;border-radius:50%;background:#fffaf0b8;color:var(--rose-dark);font-size:2rem}.slot-inner strong{display:block;font:1.35rem var(--serif);margin-bottom:5px}.slot-inner p{max-width:260px;margin:0 auto;color:#756960;font-size:.9rem}.slot-label{position:absolute;z-index:4;bottom:18px;left:50%;transform:translateX(-50%);white-space:nowrap;border-radius:999px;background:#fffdf0d9;padding:7px 13px;font-size:.75rem;color:#66574c}
+    .photo-pick{position:absolute;z-index:4;bottom:66px;left:50%;transform:translateX(-50%);border:0;border-radius:999px;padding:9px 15px;background:#fffdf0ed;color:#614d42;font-weight:700;font-size:.84rem;cursor:pointer;white-space:nowrap;box-shadow:0 4px 14px #49362818}.photo-pick:hover{background:white}.photo-pick:focus-visible{outline:3px solid #829277;outline-offset:3px}.uploaded-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}.photo-slot.has-photo .slot-inner,.about-photo.has-photo .slot-inner,.product-photo.has-photo .photo-placeholder{display:none}.about-photo,.product-photo{position:relative;overflow:hidden}.about-photo .photo-pick{bottom:18px}.product-photo .photo-pick{bottom:14px}.about-photo.has-photo .photo-pick,.product-photo.has-photo .photo-pick{background:#fffdf0ed}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}.about-photo{min-height:400px;border-radius:26px;background:linear-gradient(135deg,#e8ede3,#f2ddd5);border:1px dashed #b9aa9b;display:grid;place-items:center;text-align:center;padding:25px}.about-copy h2{font:clamp(2rem,4vw,3rem)/1.12 var(--serif);margin:12px 0 18px}.about-copy p{color:var(--muted)}.about-note{margin-top:24px;padding:18px 20px;border-left:3px solid var(--sage);background:#edf0e8;border-radius:0 12px 12px 0;font-size:.93rem}.facts{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px}.fact{min-width:110px}.fact strong{display:block;font:1.5rem var(--serif);color:var(--rose-dark)}.fact span{font-size:.83rem;color:var(--muted)}
+    .products{background:var(--paper)}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:white;box-shadow:0 8px 24px #55412d08;transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}.product-photo{height:250px;background:linear-gradient(145deg,#f1dfd6,#f7eee6 56%,#e5eadf);display:grid;place-items:center;border-bottom:1px dashed #c9b9aa;position:relative}.product-photo:nth-child(2){background:linear-gradient(145deg,#e7ece2,#faf0df)}.photo-placeholder{text-align:center;color:#73645a;padding:20px}.photo-placeholder .slot-icon{width:58px;height:58px;font-size:1.6rem}.photo-placeholder strong{display:block;font:1.1rem var(--serif)}.product-body{padding:22px}.product-body h3{font:1.45rem var(--serif);margin:0 0 8px}.product-body p{color:var(--muted);font-size:.94rem;margin:0 0 15px}.product-meta{font-size:.82rem;color:#756a62;border-top:1px solid var(--line);padding-top:13px}.product-meta span{display:block;margin:4px 0}.tag{display:inline-block;border-radius:99px;padding:4px 10px;background:var(--sage-light);color:#54614c;font-size:.75rem;font-weight:700}.product-body .btn{margin-top:16px;padding:10px 16px;font-size:.88rem}.notice{text-align:center;color:var(--muted);font-size:.85rem;margin:25px auto 0;max-width:720px}
+    .workshops{background:#f5efe7}.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:-10px 0 28px}.filter{border:1px solid var(--line);background:#fffdf9;color:var(--muted);border-radius:99px;padding:9px 16px;cursor:pointer}.filter[aria-pressed="true"]{background:var(--sage);border-color:var(--sage);color:white}.workshop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.workshop{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:23px}.workshop h3{font:1.45rem var(--serif);margin:10px 0 6px}.workshop p{color:var(--muted);font-size:.93rem}.workshop .details{font-size:.86rem;color:#645b54;border-top:1px solid var(--line);padding-top:13px;margin-top:15px}.workshop details{margin-top:14px;border-top:1px solid var(--line);padding-top:13px}.workshop summary{cursor:pointer;font-weight:700;color:var(--rose-dark)}.steps{padding-left:20px;color:var(--muted);font-size:.9rem}.steps li{padding:4px 0}.level{font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sage)}
+    .learn-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.learn-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}.learn-card h3{font:1.2rem var(--serif);margin:0 0 6px}.learn-card p{color:var(--muted);font-size:.92rem;margin:0}.symbol{font-family:monospace;background:#f3e8de;padding:2px 6px;border-radius:5px;color:#7a5647}
+    .materials{background:var(--sage-light)}.material-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.material{background:#ffffffa8;border:1px solid #d7dfd0;border-radius:15px;padding:19px;text-align:center}.material b{display:block;font:1.08rem var(--serif);margin:8px 0 4px}.material span{font-size:1.65rem}.material p{margin:0;color:var(--muted);font-size:.84rem}.safety{max-width:820px;margin:24px auto 0;padding:17px 20px;border-radius:14px;background:#fff9eb;color:#635749;font-size:.9rem}
+    .newsletter{background:linear-gradient(135deg,#865b50,#a76c5e);color:white}.newsletter .section-head p,.newsletter .eyebrow{color:#f1d9cf}.form{max-width:600px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:.85rem}.field input{width:100%;padding:12px 14px;border:1px solid #ffffff88;border-radius:10px;background:#fff;color:var(--ink)}.consent{grid-column:1/-1;display:flex;align-items:flex-start;gap:9px;font-size:.85rem}.consent input{margin-top:6px;accent-color:var(--sage)}.form button{grid-column:1/-1;justify-self:center;background:#f4e8d8;color:#54423a}.form button:hover{background:white}.form-hint,.form-message{grid-column:1/-1;text-align:center;font-size:.83rem;color:#f6e8df;margin:0}.form-message{min-height:1.5em;font-weight:700}
+    footer{padding:32px 0;background:#342f2b;color:#eee3d9}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-links{display:flex;gap:17px;flex-wrap:wrap}.footer-links a{font-size:.85rem;text-decoration:none;color:#eee3d9}.footer-row small{color:#cbbdb2}
+    @media(max-width:900px){.navlinks{gap:13px}.navlinks a{font-size:.82rem}.hero-grid{gap:28px}.photo-slot{min-height:380px}.product-grid,.workshop-grid{grid-template-columns:repeat(2,1fr)}.product-card:last-child{grid-column:1/-1;max-width:calc(50% - 10px);justify-self:center}.about-grid{gap:38px}}
+    @media(max-width:680px){.wrap{width:min(100% - 30px,540px)}.section{padding:64px 0}.nav{height:66px}.menu-btn{display:block}.nav>.btn{display:none}.navlinks{display:none;position:absolute;top:65px;left:0;right:0;background:var(--paper);padding:16px 24px 22px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch}.navlinks.open{display:flex}.navlinks a{padding:7px 0;font-size:.96rem}.hero{padding:42px 0 58px}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-copy h1{font-size:clamp(2.7rem,13vw,4rem)}.hero-photo{min-height:340px}.about-grid{gap:26px}.about-photo{min-height:310px}.product-grid,.workshop-grid,.learn-grid{grid-template-columns:1fr}.product-card:last-child{grid-column:auto;max-width:none}.product-photo{height:230px}.material-list{grid-template-columns:repeat(2,1fr)}.form{grid-template-columns:1fr}.field,.consent,.form button,.form-hint,.form-message{grid-column:1}.footer-row{flex-direction:column;align-items:flex-start}.section-head{margin-bottom:28px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Тёплые петли — на главную">Тёплые<span> петли</span></a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navlinks">Меню</button>
+      <nav class="navlinks" id="navlinks" aria-label="Основная навигация">
+        <a href="#about">Знакомство</a><a href="#products">Мои товары</a><a href="#workshops">Мастер-классы</a><a href="#learn">Как вязать</a><a href="#materials">Материалы</a>
+      </nav>
+      <a class="btn" href="#products">Посмотреть товары</a>
+    </div>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Вязаные куклы и мастер-классы</span>
+          <h1>Тепло ручной работы <em>в каждой петле</em></h1>
+          <p>Добро пожаловать в мою творческую мастерскую. Здесь можно познакомиться со мной, посмотреть мои изделия и выбрать мастер-класс, чтобы связать свою первую куклу.</p>
+          <div class="hero-actions"><a class="btn" href="#products">Смотреть товары <span aria-hidden="true">→</span></a><a class="btn outline" href="#about">Познакомиться со мной</a></div>
+          <div class="hero-note"><span aria-hidden="true">✿</span> Авторские изделия и уроки для начинающих</div>
+        </div>
+        <div class="photo-slot hero-photo" data-photo-frame role="group" aria-label="Фотография для обложки сайта">
+          <img class="uploaded-image" id="heroImg" alt="" hidden>
+          <div class="slot-inner"><div class="slot-icon" aria-hidden="true">♡</div><strong>Ваше фото здесь</strong><p>Добавьте портрет за вязанием или фотографию любимой работы</p></div><button class="photo-pick" type="button" data-open-picker="heroFile">Добавить фото</button><input id="heroFile" class="photo-file" type="file" accept="image/*" hidden data-photo-target="heroImg" data-photo-key="site-photo-hero" data-photo-alt="Фотография для обложки сайта"><span class="slot-label">Фотография автора / изделия</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div class="about-photo" data-photo-frame role="group" aria-label="Фотография автора">
+          <img class="uploaded-image" id="aboutImg" alt="" hidden>
+          <div class="slot-inner"><div class="slot-icon" aria-hidden="true">☺</div><strong>Добавьте своё фото</strong><p>Портрет или естественный снимок за вязанием</p></div><button class="photo-pick" type="button" data-open-picker="aboutFile">Добавить фото</button><input id="aboutFile" class="photo-file" type="file" accept="image/*" hidden data-photo-target="aboutImg" data-photo-key="site-photo-about" data-photo-alt="Портрет автора мастерской">
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Немного обо мне</span>
+          <h2>Знакомство со мной</h2>
+          <p>Привет! Меня зовут <strong>[ваше имя]</strong>. Я создаю <strong>[что именно вы вяжете]</strong> и делюсь мастер-классами, чтобы вам было легче связать свою первую куклу.</p>
+          <p>В этом разделе я расскажу о себе и покажу, как рождаются мои работы. Добавьте сюда пару личных фактов: с чего началось ваше увлечение, что вдохновляет и какие изделия вам особенно нравится создавать.</p>
+          <div class="about-note">Замените текст в квадратных скобках своими данными. Добавьте только те сведения, которыми хотите поделиться с посетителями.</div>
+          <div class="facts"><div class="fact"><strong>[число]</strong><span>лет в творчестве</span></div><div class="fact"><strong>[число]</strong><span>созданных работ</span></div><div class="fact"><strong>[город]</strong><span>моя мастерская</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section products" id="products">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Создано вручную</span><h2>Мои товары</h2><p>Здесь разместите изделия, которые хотите показать или предложить покупателям. Добавьте свои фотографии и заполните описания.</p></div>
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-photo" data-photo-frame role="group" aria-label="Фотография товара"><img class="uploaded-image" id="productImg1" alt="" hidden><div class="photo-placeholder"><div class="slot-icon" aria-hidden="true">♡</div><strong>Добавьте фото товара</strong></div><button class="photo-pick" type="button" data-open-picker="productFile1">Добавить фото</button><input id="productFile1" class="photo-file" type="file" accept="image/*" hidden data-photo-target="productImg1" data-photo-key="site-photo-product-1" data-photo-alt="Фотография товара"></div>
+            <div class="product-body"><span class="tag">[Категория]</span><h3>[Название изделия]</h3><p>Вязаная вручную [кукла / игрушка / аксессуар]. Особенности изделия: [цвет, одежда, отделка или другая деталь].</p><div class="product-meta"><span>Материал: [укажите]</span><span>Размер: [укажите]</span><span>Цена и наличие: [укажите]</span></div><button class="btn outline orderBtn" type="button">Узнать о заказе</button></div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo" data-photo-frame role="group" aria-label="Фотография товара"><img class="uploaded-image" id="productImg2" alt="" hidden><div class="photo-placeholder"><div class="slot-icon" aria-hidden="true">✿</div><strong>Добавьте фото товара</strong></div><button class="photo-pick" type="button" data-open-picker="productFile2">Добавить фото</button><input id="productFile2" class="photo-file" type="file" accept="image/*" hidden data-photo-target="productImg2" data-photo-key="site-photo-product-2" data-photo-alt="Фотография товара"></div>
+            <div class="product-body"><span class="tag">[Категория]</span><h3>[Название изделия]</h3><p>Коротко расскажите, чем изделие примечательно и кому оно подойдёт. Укажите только реальные свойства товара.</p><div class="product-meta"><span>Материал: [укажите]</span><span>Размер: [укажите]</span><span>Цена и наличие: [укажите]</span></div><button class="btn outline orderBtn" type="button">Узнать о заказе</button></div>
+          </article>
+          <article class="product-card">
+            <div class="product-photo" data-photo-frame role="group" aria-label="Фотография товара"><img class="uploaded-image" id="productImg3" alt="" hidden><div class="photo-placeholder"><div class="slot-icon" aria-hidden="true">❀</div><strong>Добавьте фото товара</strong></div><button class="photo-pick" type="button" data-open-picker="productFile3">Добавить фото</button><input id="productFile3" class="photo-file" type="file" accept="image/*" hidden data-photo-target="productImg3" data-photo-key="site-photo-product-3" data-photo-alt="Фотография товара"></div>
+            <div class="product-body"><span class="tag">[Категория]</span><h3>[Название изделия]</h3><p>Добавьте описание: материалы, важные детали оформления и возможные варианты изделия, если они действительно доступны.</p><div class="product-meta"><span>Материал: [укажите]</span><span>Размер: [укажите]</span><span>Цена и наличие: [укажите]</span></div><button class="btn outline orderBtn" type="button">Узнать о заказе</button></div>
+          </article>
+        </div>
+        <p class="notice">Фотографии можно добавить кнопками выше: они сохраняются только в этом браузере. Цены, наличие и способ оформления заказа заполните перед публикацией сайта. Кнопки заказа сейчас демонстрационные.</p>
+      </div>
+    </section>
+
+    <section class="section workshops" id="workshops">
+      <div class="wrap">
+        <div class="section-head"><span class="eyebrow">Выберите свой темп</span><h2>Мастер-классы</h2><p>Начните с простых форм и постепенно переходите к более сложным деталям. Уровень и этапы ниже — демонстрационная структура; точные схемы добавьте по своим проверенным инструкциям.</p></div>
+        <div class="filters" role="group" aria-label="Фильтр мастер-классов по сложности"><button class="filter" data-level="all" aria-pressed="true">Все уровни</button><button class="filter" data-level="beginner" aria-pressed="false">Начинающий</button><button class="filter" data-level="intermediate" aria-pressed="false">Средний</button><button class="filter" data-level="advanced" aria-pressed="false">Продвинутый</button></div>
+        <div class="workshop-grid">
+          <article class="workshop" data-level="beginner"><span class="level">Начинающий · пример</span><h3>Первая вязаная кукла</h3><p>Небольшой проект, чтобы потренироваться вязать простые детали, соединять их и аккуратно оформить игрушку.</p><div class="details"><b>Подойдут навыки:</b> базовые петли или готовность освоить их.<br><b>Материалы:</b> пряжа, крючок, наполнитель, игла.</div><details><summary>Посмотреть этапы</summary><ol class="steps"><li>Подготовить материалы и выбрать цвета.</li><li>Связать детали по проверенной схеме автора.</li><li>Набить детали небольшими порциями.</li><li>Собрать куклу и закрепить нити.</li><li>Добавить безопасное оформление лица.</li></ol></details></article>
+          <article class="workshop" data-level="intermediate"><span class="level">Средний · пример</span><h3>Кукла с одеждой</h3><p>Проект для тех, кто хочет попробовать смену цвета, дополнительные элементы и съёмный аксессуар.</p><div class="details"><b>Подойдут навыки:</b> уверенное вязание по кругу, смена цвета.<br><b>Материалы:</b> несколько оттенков пряжи, крючок, наполнитель.</div><details><summary>Посмотреть этапы</summary><ol class="steps"><li>Подготовить палитру и разложить материалы.</li><li>Связать основные детали по своей схеме.</li><li>Выполнить одежду и дополнительные элементы.</li><li>Собрать изделие, проверяя симметрию.</li><li>Закрепить все концы нитей и оформить детали.</li></ol></details></article>
+          <article class="workshop" data-level="advanced"><span class="level">Продвинутый · пример</span><h3>Авторская кукла с деталями</h3><p>Более сложная работа с несколькими элементами, фактурами и индивидуальным оформлением.</p><div class="details"><b>Подойдут навыки:</b> сборка деталей, работа с несколькими цветами.<br><b>Материалы:</b> по инструкции выбранного проекта.</div><details><summary>Посмотреть этапы</summary><ol class="steps"><li>Составить план проекта и подготовить материалы.</li><li>Связать основные и дополнительные детали.</li><li>Собрать конструкцию, закрепляя детали надёжно.</li><li>Добавить одежду, волосы и декор.</li><li>Проверить прочность креплений и завершить работу.</li></ol></details></article>
+        </div>
+        <p class="notice">Эти этапы помогают показать структуру урока и не являются точными схемами вязания. Добавьте собственные проверенные инструкции, если хотите обучать по рядам и количеству петель.</p>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="wrap"><div class="section-head"><span class="eyebrow">Маленькие шаги</span><h2>Основы вязания</h2><p>Краткие объяснения для знакомства с базовыми приёмами. Точный порядок и число петель зависят от выбранной схемы.</p></div>
+        <div class="learn-grid">
+          <article class="learn-card"><h3>Скользящее кольцо</h3><p>Сформируйте регулируемую петлю из нити, провяжите нужные петли внутрь кольца и потяните за короткий конец, чтобы стянуть отверстие. Практикуйтесь на образце.</p></article>
+          <article class="learn-card"><h3>Столбик без накида</h3><p>Введите крючок в петлю, захватите нить и вытяните её. На крючке две петли; захватите нить ещё раз и протяните через обе.</p></article>
+          <article class="learn-card"><h3>Прибавка и убавка</h3><p>Прибавка — два столбика в одну петлю основания. Убавка соединяет соседние петли в одну. Сокращения в схемах могут выглядеть как <span class="symbol">пр</span> и <span class="symbol">уб</span>.</p></article>
+          <article class="learn-card"><h3>Смена цвета и закрепление</h3><p>Смену цвета обычно начинают на последнем протягивании предыдущего столбика. Концы нитей закрепляют иглой с изнаночной стороны так, чтобы они не распускались.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section materials" id="materials">
+      <div class="wrap"><div class="section-head"><span class="eyebrow">Подготовка к работе</span><h2>Материалы и инструменты</h2><p>Подбирайте материалы по инструкции проекта и назначению готовой игрушки.</p></div>
+        <div class="material-list"><div class="material"><span aria-hidden="true">🧶</span><b>Пряжа</b><p>Выберите состав и толщину, подходящие к схеме.</p></div><div class="material"><span aria-hidden="true">🪝</span><b>Крючок</b><p>Размер влияет на плотность полотна.</p></div><div class="material"><span aria-hidden="true">☁</span><b>Наполнитель</b><p>Используйте подходящий для изделия материал.</p></div><div class="material"><span aria-hidden="true">🪡</span><b>Игла и маркер</b><p>Для сборки, закрепления нити и отметки ряда.</p></div></div>
+        <div class="safety"><b>Безопасность:</b> мелкие детали могут быть опасны для маленьких детей. Для детской игрушки выбирайте надёжно вышитые черты лица и крепко закрепляйте элементы. Учитывайте возраст будущего владельца и рекомендации к материалам.</div>
+      </div>
+    </section>
+
+    <section class="section newsletter" id="subscribe">
+      <div class="wrap"><div class="section-head"><span class="eyebrow">Для новых подписчиков</span><h2>Получайте новости мастерской</h2><p>Оставьте имя и электронную почту, чтобы подписаться на обновления и новые мастер-классы.</p></div>
+        <form class="form" id="subscribeForm" novalidate>
+          <div class="field"><label for="name">Имя</label><input id="name" name="name" autocomplete="name" required placeholder="Как к вам обращаться?"></div>
+          <div class="field"><label for="email">Электронная почта</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="name@example.com"></div>
+          <label class="consent"><input id="consent" type="checkbox" required><span>Я согласен(на) на обработку данных, указанных в этой демонстрационной форме.</span></label>
+          <button class="btn" type="submit">Хочу получать мастер-классы</button>
+          <p class="form-hint">Демонстрация: эта форма пока не отправляет и не сохраняет данные.</p><p class="form-message" id="formMessage" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-row"><a class="brand" href="#home">Тёплые<span> петли</span></a><nav class="footer-links" aria-label="Навигация в подвале"><a href="#about">Знакомство</a><a href="#products">Мои товары</a><a href="#workshops">Мастер-классы</a><a href="#materials">Материалы</a></nav><small>Обучающий проект · 2026</small></div></footer>
+  <script>
+    const menuBtn=document.getElementById('menuBtn');
+    const navlinks=document.getElementById('navlinks');
+    menuBtn.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});
+    navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+
+    const filters=[...document.querySelectorAll('.filter')];
+    const workshops=[...document.querySelectorAll('.workshop')];
+    filters.forEach(button=>button.addEventListener('click',()=>{
+      const level=button.dataset.level;
+      filters.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+      workshops.forEach(card=>{card.hidden=level!=='all'&&card.dataset.level!==level;});
+    }));
+
+    document.querySelectorAll('.orderBtn').forEach(button=>button.addEventListener('click',()=>{
+      alert('Добавьте свой контакт или ссылку на оформление заказа перед публикацией сайта.');
+    }));
+
+    const form=document.getElementById('subscribeForm');
+    const message=document.getElementById('formMessage');
+    form.addEventListener('submit',event=>{
+      event.preventDefault();
+      const name=document.getElementById('name');
+      const email=document.getElementById('email');
+      const consent=document.getElementById('consent');
+      if(!name.value.trim()||!email.validity.valid||!consent.checked){
+        message.textContent='Заполните имя и корректный адрес почты, затем отметьте согласие.';
+        if(!name.value.trim()) name.focus(); else if(!email.validity.valid) email.focus(); else consent.focus();
+        return;
+      }
+      message.textContent='Спасибо, '+name.value.trim()+'! Это демонстрация: данные никуда не отправлены.';
+      form.reset();
+    });
+
+    // Загрузка фотографий и локальное сохранение в браузере.
+    document.querySelectorAll('[data-open-picker]').forEach(button=>{
+      button.addEventListener('click',()=>document.getElementById(button.dataset.openPicker).click());
+    });
+    function showPhoto(input,dataUrl,persist=true){
+      const image=document.getElementById(input.dataset.photoTarget);
+      const frame=input.closest('[data-photo-frame]');
+      image.src=dataUrl;
+      image.alt=input.dataset.photoAlt;
+      image.hidden=false;
+      frame.classList.add('has-photo');
+      if(persist){
+        try{localStorage.setItem(input.dataset.photoKey,dataUrl);}
+        catch(error){alert('Фото показано, но браузер не смог его сохранить. Попробуйте файл меньшего размера.');}
+      }
+    }
+    function compressPhoto(file){
+      return new Promise((resolve,reject)=>{
+        const reader=new FileReader();
+        reader.onerror=()=>reject(new Error('Не удалось прочитать файл.'));
+        reader.onload=()=>{
+          const source=new Image();
+          source.onerror=()=>reject(new Error('Файл не удалось открыть как изображение.'));
+          source.onload=()=>{
+            const maxSide=1400;
+            const scale=Math.min(1,maxSide/Math.max(source.width,source.height));
+            const canvas=document.createElement('canvas');
+            canvas.width=Math.round(source.width*scale);
+            canvas.height=Math.round(source.height*scale);
+            canvas.getContext('2d').drawImage(source,0,0,canvas.width,canvas.height);
+            resolve(canvas.toDataURL('image/jpeg',0.84));
+          };
+          source.src=reader.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+    document.querySelectorAll('.photo-file').forEach(input=>{
+      try{const saved=localStorage.getItem(input.dataset.photoKey);if(saved)showPhoto(input,saved,false);}catch(error){}
+      input.addEventListener('change',async()=>{
+        const file=input.files&&input.files[0];
+        if(!file)return;
+        if(!file.type.startsWith('image/')){alert('Выберите файл изображения.');input.value='';return;}
+        try{showPhoto(input,await compressPhoto(file));}
+        catch(error){alert('Не удалось загрузить фото. Попробуйте выбрать другое изображение.');}
+        input.value='';
+      });
+    });
+  </script>
+</body>
+</html>
+
